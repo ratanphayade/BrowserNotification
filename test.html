@@ -1,0 +1,17 @@
+<script type="text/javascript" src="NotificationManager.js"></script>
+
+<script>
+    var notification = new NotificationManager("title","sample_icon.png")
+        .resetListeners()
+        .addListener('onshow', function(){
+            alert('Im onShow')
+        })
+        .addListener('onclick', function(){
+            alert('Im onClick');
+        })
+        .deleteListener('onshow')
+        .needSound(false)
+        .setIcon('sample_icon.png')
+        .setTimeout(50000);
+    notification.notify("This is a Test");
+</script>
